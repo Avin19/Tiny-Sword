@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -424,126 +425,146 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1097607552
+    uuid:
+      value0: 3946008704
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -348958592
     name: Happy_Sheep
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Happy_Sheep_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 43
         height: 38
       spriteId: c1081f2cb8cc60145b09194e07bcef22
-    - name: Happy_Sheep_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 43
         height: 38
       spriteId: e8c0af4706dc1214793276da2a8bae4e
-    - name: Happy_Sheep_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 43
         height: 38
       spriteId: 5b6cd6dcbdb13414ab1875eaf4fb6015
-    - name: Happy_Sheep_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 43
         height: 38
       spriteId: 62530595e45029347bdafa82a0fc50a3
-    - name: Happy_Sheep_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 43
         height: 37
       spriteId: 6c244232bba95c142b462c4b15f0dd79
-    - name: Happy_Sheep_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 42
         y: 42
         width: 46
         height: 36
       spriteId: 29a7e242513fcc34aacf417e578d9518
-    - name: Happy_Sheep_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 42
         y: 42
         width: 46
         height: 36
       spriteId: 325bf18edd317934eb0d69da091a40ca
-    - name: Happy_Sheep_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 44
         height: 37
       spriteId: 2c7e5c23b76ac194590369ed097a4279
-    - name: Happy_Sheep_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 43
         height: 38
       spriteId: 8219c92a0c1c6d44e8c23946f9455a33
-    - name: Happy_Sheep_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 43
         height: 38
       spriteId: d90185d8f62f55741b83b970c2bccf24
-    - name: Happy_Sheep_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 45
         y: 42
         width: 38
         height: 48
       spriteId: 3f5ed661f06022f43843e519e4025f4f
-    - name: Happy_Sheep_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 45
         height: 50
       spriteId: 6df77e4ed2a087b41b46ce1da6c78637
-    - name: Happy_Sheep_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 45
         height: 51
       spriteId: 0ea2ea76d59e0914d9376e99ec4212cc
-    - name: Happy_Sheep_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 42
         width: 45
         height: 45
       spriteId: 23b6402b58f89ec43be268204daf17bd
-    - name: Happy_Sheep_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 38
         y: 42
@@ -557,3 +578,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 128, y: 128}
+  previousTextureSize: {x: 256, y: 256}
