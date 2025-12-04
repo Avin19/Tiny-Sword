@@ -23,11 +23,4 @@ public class HumanoidUnit : Unit
             animator.SetFloat("Speed", CurrentSpeed);
         }
     }
-    void Start()
-    {
-
-        GameManager.Instance.Test();
-
-
-    }
 }
