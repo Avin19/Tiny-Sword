@@ -2,10 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
+public class AdManager : SingletonManager<AdManager>, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     // --- Singleton ----------------------------------------------------------------
-    public static AdManager Instance { get; private set; }
 
     // --- Game IDs -----------------------------------------------------------------
     [Header("Game IDs")]
@@ -44,13 +43,6 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     private void Awake()
     {
         // Singleton pattern
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         // Choose platform-specific IDs
 #if UNITY_IOS
@@ -332,10 +324,5 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     // Example: external script calls AdManager.Instance.ShowInterstitial();
     // or AdManager.Instance.ShowRewarded();
 
-    private void OnDestroy()
-    {
-        // clean up singleton reference (if this instance was destroyed)
-        if (Instance == this)
-            Instance = null;
-    }
+
 }

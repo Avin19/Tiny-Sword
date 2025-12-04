@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 public class HumanoidUnit : Unit
 {
     protected Vector2 velocity;
     protected Vector3 lastPosition;
+    public float CurrentSpeed => velocity.magnitude;
 
 
     protected void Update()
@@ -14,7 +16,18 @@ public class HumanoidUnit : Unit
 
         lastPosition = transform.position;
         isMoving = velocity.magnitude > 0.1f;
+
+        if (animator != null)
+        {
+
+            animator.SetFloat("Speed", CurrentSpeed);
+        }
     }
+    void Start()
+    {
+
+        GameManager.Instance.Test();
 
 
+    }
 }
