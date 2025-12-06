@@ -25,6 +25,16 @@ public class GameManager : SingletonManager<GameManager>
         }
 
     }
+    private bool HasClickedOnUnit(RaycastHit2D hit, out Unit _unit)
+    {
+        if (hit.collider != null && hit.collider.TryGetComponent<Unit>(out var unit))
+        {
+            _unit = unit;
+            return true;
+        }
+        _unit = null;
+        return false;
+    }
 
     private Vector2 GetInputPosition()
     {
@@ -34,7 +44,17 @@ public class GameManager : SingletonManager<GameManager>
     private void DetectClick(Vector2 _inputPosition)
     {
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(_inputPosition);
-        HandleClickOnGround(worldPosition);
+        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+        if (HasClickedOnUnit(hit, out var unit))
+        {
+            HandleClickOnUnit(unit);
+            return;
+        }
+        else
+        {
+
+            HandleClickOnGround(worldPosition);
+        }
 
     }
 
@@ -44,6 +64,16 @@ public class GameManager : SingletonManager<GameManager>
         {
             activeUnit.MoveToPosition(worldPosition);
         }
+    }
+
+    private void HandleClickOnUnit(Unit unit)
+    {
+        SelectNewUnit(unit);
+    }
+
+    private void SelectNewUnit(Unit unit)
+    {
+        activeUnit = unit;
     }
 
 }

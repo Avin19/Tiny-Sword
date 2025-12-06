@@ -18450,7 +18450,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -18, y: -5, z: 0}
@@ -18750,7 +18750,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -18, y: 5, z: 0}
@@ -21014,7 +21014,7 @@ Tilemap:
       - {fileID: -274643402, guid: e40857a5e6a82f04b83e2cf75d757fbd, type: 3}
       - {fileID: 1843478843, guid: e40857a5e6a82f04b83e2cf75d757fbd, type: 3}
       - {fileID: 939966453, guid: e40857a5e6a82f04b83e2cf75d757fbd, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 20, y: -10, z: 0}
@@ -28959,6 +28959,7 @@ GameObject:
   - component: {fileID: 672676742}
   - component: {fileID: 672676741}
   - component: {fileID: 672676743}
+  - component: {fileID: 672676744}
   m_Layer: 0
   m_Name: Builder
   m_TagString: Untagged
@@ -29080,6 +29081,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &672676744
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672676738}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.84, y: 1.13}
+  m_Direction: 0
 --- !u!1 &1051823746
 GameObject:
   m_ObjectHideFlags: 0
@@ -29174,7 +29210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9e945eefbfe0c42a6de8dac2e2acf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeUnit: {fileID: 672676741}
+  activeUnit: {fileID: 0}
 --- !u!1 &1497531970
 GameObject:
   m_ObjectHideFlags: 0
@@ -29242,6 +29278,7 @@ GameObject:
   - component: {fileID: 1872357166}
   - component: {fileID: 1872357165}
   - component: {fileID: 1872357164}
+  - component: {fileID: 1872357167}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -29363,6 +29400,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &1872357167
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872357161}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.24, y: 1.4}
+  m_Direction: 0
 --- !u!1 &1872469727
 GameObject:
   m_ObjectHideFlags: 0
