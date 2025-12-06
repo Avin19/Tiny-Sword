@@ -73,7 +73,12 @@ public class GameManager : SingletonManager<GameManager>
 
     private void SelectNewUnit(Unit unit)
     {
+        if (activeUnit != null)
+        {
+            activeUnit.Deselect();
+        }
         activeUnit = unit;
+        activeUnit.Select();
     }
 
 }
