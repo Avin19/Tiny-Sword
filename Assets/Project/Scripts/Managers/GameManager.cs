@@ -6,6 +6,8 @@ public class GameManager : SingletonManager<GameManager>
 
     public Unit activeUnit;
     private Vector2 touchPosition;
+
+    public bool IsUnitSelected => activeUnit != null;
     // Singleton instance
     void Update()
     {
@@ -73,7 +75,7 @@ public class GameManager : SingletonManager<GameManager>
 
     private void SelectNewUnit(Unit unit)
     {
-        if (activeUnit != null)
+        if (IsUnitSelected)
         {
             activeUnit.Deselect();
         }

@@ -3,8 +3,7 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    [SerializeField]
-    private Material highlightMaterial;
+
     [SerializeField] protected bool isMoving;
     [SerializeField] protected bool isTargeted;
     protected Animator animator;
@@ -12,6 +11,7 @@ public abstract class Unit : MonoBehaviour
 
     protected SpriteRenderer _spriteRenderer;
     protected Material originalMaterial;
+    protected Material highlightMaterial;
 
     protected void Awake()
     {
@@ -19,6 +19,7 @@ public abstract class Unit : MonoBehaviour
         _aiPawn = TryGetComponent<AIPawn>(out var aiPawn) ? aiPawn : null;
         _spriteRenderer = TryGetComponent<SpriteRenderer>(out var spriteRenderer) ? spriteRenderer : null;
         originalMaterial = _spriteRenderer != null ? _spriteRenderer.material : null;
+        highlightMaterial = Resources.Load<Material>("Material/Outline");
     }
 
     public void MoveToPosition(Vector3 position)
