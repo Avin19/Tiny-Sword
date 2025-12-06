@@ -17880,7 +17880,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -11, y: -11, z: 0}
@@ -18450,7 +18450,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -18, y: -5, z: 0}
@@ -18915,7 +18915,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -17, y: 10, z: 0}
@@ -19320,7 +19320,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 10, y: 10, z: 0}
@@ -21391,7 +21391,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5956cc9188f689b4e9a55699a8bd80de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29211,6 +29211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9e945eefbfe0c42a6de8dac2e2acf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointToClickPrefab: {fileID: 522695962865904255, guid: 611ca2a2e5deb4e419866cbcd09be808, type: 3}
   activeUnit: {fileID: 0}
 --- !u!1 &1497531970
 GameObject:
