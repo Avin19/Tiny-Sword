@@ -7,10 +7,6 @@ public class AIPawn : MonoBehaviour
     public Vector3? Destination => m_Destination;
     [SerializeField] private float m_Speed = 5f;
 
-    private void Start()
-    {
-        SetDestination(new Vector3(5f, -5f, 0f));
-    }
 
     private void Update()
     {

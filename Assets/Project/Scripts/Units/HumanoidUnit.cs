@@ -5,7 +5,10 @@ public class HumanoidUnit : Unit
     protected Vector2 velocity;
     protected Vector3 lastPosition;
     public float CurrentSpeed => velocity.magnitude;
-
+    private void Start()
+    {
+        lastPosition = transform.position;
+    }
 
     protected void Update()
     {
