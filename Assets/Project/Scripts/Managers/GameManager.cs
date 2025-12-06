@@ -63,9 +63,9 @@ public class GameManager : SingletonManager<GameManager>
 
     private void HandleClickOnGround(Vector2 worldPosition)
     {
-        Displayeffect(worldPosition);
-        if (activeUnit != null)
+        if (activeUnit != null && IsHumanoid(activeUnit))
         {
+            Displayeffect(worldPosition);
             activeUnit.MoveToPosition(worldPosition);
         }
     }
@@ -83,6 +83,10 @@ public class GameManager : SingletonManager<GameManager>
         }
         activeUnit = unit;
         activeUnit.Select();
+    }
+    bool IsHumanoid(Unit unit)
+    {
+        return unit is HumanoidUnit;
     }
 
     private void Displayeffect(Vector2 worldPoint)
