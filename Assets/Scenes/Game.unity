@@ -18555,7 +18555,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 16, y: -2, z: 0}
@@ -18795,7 +18795,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 16, y: 6, z: 0}
@@ -19020,7 +19020,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -10, y: 10, z: 0}
@@ -19215,7 +19215,7 @@ Tilemap:
       - {fileID: 1175595966, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1020532898, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
       - {fileID: -1293008866, guid: 955e0a6a4c4a148428330672c1b4ad31, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: 10, z: 0}
@@ -21332,7 +21332,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.53, z: -10}
+  m_LocalPosition: {x: 0, y: -5.27, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29152,7 +29152,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f3a35605f375c1e4b972fe38342fe9fb, type: 2}
   isMoving: 0
   isTargeted: 0
-  Action: []
 --- !u!114 &672676742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29661,7 +29660,6 @@ MonoBehaviour:
   actionSOs: []
   isMoving: 0
   isTargeted: 0
-  Action: []
 --- !u!114 &1872357165
 MonoBehaviour:
   m_ObjectHideFlags: 0

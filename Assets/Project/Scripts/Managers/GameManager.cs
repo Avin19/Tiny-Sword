@@ -25,22 +25,9 @@ public class GameManager : SingletonManager<GameManager>
         {
             placementProcess.Update();
         }
-        else
+        else if (Utilis.TryGetShortClickPosition(out Vector2 inputPosition))
         {
-            if (Utilis.IsLeftClickOrTapDown)
-            {
-                touchPosition = Utilis.InputPosition;
-            }
-            if (Utilis.IsLeftClickOrTapUp)
-            {
-
-                if (Vector2.Distance(touchPosition, Utilis.InputPosition) < 10f) // Threshold for click detection
-                {
-                    DetectClick(Utilis.InputPosition);
-                }
-
-            }
-
+            DetectClick(inputPosition);
         }
 
 
