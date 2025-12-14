@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 [CreateAssetMenu(fileName = "BuildActionSO", menuName = "ActionSO/BuildAction", order = 0)]
 public class BuildActionSO : ActionSO
@@ -18,6 +19,6 @@ public class BuildActionSO : ActionSO
     public int WoodCost => woodCost;
     public override void Execute(GameManager gameManager)
     {
-
+        gameManager.StartBuildProcess(this);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class ActionSO : ScriptableObject
 {
-    public Sprite Image;
+    public Sprite Icon;
 
     public string ActionName;
 

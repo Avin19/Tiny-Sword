@@ -10,6 +10,7 @@ public class GameManager : SingletonManager<GameManager>
     [SerializeField] private ActionBar actionBar;
     public Unit activeUnit;
     private Vector2 touchPosition;
+    private PlacementProcess placementProcess;
 
     public bool IsUnitSelected => activeUnit != null;
 
@@ -20,21 +21,34 @@ public class GameManager : SingletonManager<GameManager>
     // Singleton instance
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+        if (placementProcess != null)
         {
-            touchPosition = GetInputPosition();
+            placementProcess.Update();
         }
-        if (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
+        else
         {
-            Vector2 inputPosition = GetInputPosition();
-            if (Vector2.Distance(touchPosition, inputPosition) < 10f) // Threshold for click detection
+            if (Utilis.IsLeftClickOrTapDown)
+            {
+                touchPosition = Utilis.InputPosition;
+            }
+            if (Utilis.IsLeftClickOrTapUp)
             {
 
-                DetectClick(inputPosition);
+                if (Vector2.Distance(touchPosition, Utilis.InputPosition) < 10f) // Threshold for click detection
+                {
+                    DetectClick(Utilis.InputPosition);
+                }
+
             }
 
         }
 
+
+    }
+    public void StartBuildProcess(BuildActionSO buildActionSO)
+    {
+        placementProcess = new PlacementProcess(buildActionSO);
+        placementProcess.ShowPlacementOutline();
     }
     private bool HasClickedOnUnit(RaycastHit2D hit, out Unit _unit)
     {
@@ -48,10 +62,7 @@ public class GameManager : SingletonManager<GameManager>
         return false;
     }
 
-    private Vector2 GetInputPosition()
-    {
-        return Input.touchCount > 0 ? (Vector2)Input.GetTouch(0).position : (Vector2)Input.mousePosition;
-    }
+
 
     private void DetectClick(Vector2 _inputPosition)
     {
@@ -134,15 +145,15 @@ public class GameManager : SingletonManager<GameManager>
         ClearActionBarUI();
         if (unit.Action.Length == 0)
         {
-
             return;
         }
-
         actionBar.Show();
         foreach (var action in unit.Action)
         {
-            actionBar.RegisterAction();
+            actionBar.RegisterAction(action.Icon, () => action.Execute(this));
+
         }
+
     }
     void ClearActionBarUI()
     {
