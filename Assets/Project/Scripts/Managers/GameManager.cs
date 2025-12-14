@@ -1,14 +1,22 @@
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
 public class GameManager : SingletonManager<GameManager>
 {
     [Header("UI")]
     [SerializeField] private PointToClick pointToClickPrefab;
+    [SerializeField] private ActionBar actionBar;
     public Unit activeUnit;
     private Vector2 touchPosition;
 
     public bool IsUnitSelected => activeUnit != null;
+
+    void Start()
+    {
+        ClearActionBarUI();
+    }
     // Singleton instance
     void Update()
     {
@@ -30,6 +38,7 @@ public class GameManager : SingletonManager<GameManager>
     }
     private bool HasClickedOnUnit(RaycastHit2D hit, out Unit _unit)
     {
+
         if (hit.collider != null && hit.collider.TryGetComponent<Unit>(out var unit))
         {
             _unit = unit;
@@ -46,6 +55,7 @@ public class GameManager : SingletonManager<GameManager>
 
     private void DetectClick(Vector2 _inputPosition)
     {
+        if (IsPointerOverUIElement()) return;
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(_inputPosition);
         RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
         if (HasClickedOnUnit(hit, out var unit))
@@ -91,6 +101,7 @@ public class GameManager : SingletonManager<GameManager>
         }
         activeUnit = unit;
         activeUnit.Select();
+        ShowUnitAction(unit);
     }
 
     bool HasClickedOnActiveUnit(Unit clickedUnit)
@@ -112,6 +123,43 @@ public class GameManager : SingletonManager<GameManager>
         activeUnit = null;
         activeUnit.Deselect();
 
+
+        ClearActionBarUI();
+
+
     }
 
+    private void ShowUnitAction(Unit unit)
+    {
+        ClearActionBarUI();
+        if (unit.Action.Length == 0)
+        {
+
+            return;
+        }
+
+        actionBar.Show();
+        foreach (var action in unit.Action)
+        {
+            actionBar.RegisterAction();
+        }
+    }
+    void ClearActionBarUI()
+    {
+        actionBar.ClearActions();
+        actionBar.Hide();
+    }
+
+    bool IsPointerOverUIElement()
+    {
+        if (Input.touchCount > 0)
+        {
+            var touch = Input.GetTouch(0);
+            return EventSystem.current.IsPointerOverGameObject(touch.fingerId);
+        }
+        else
+        {
+            return EventSystem.current.IsPointerOverGameObject();
+        }
+    }
 }

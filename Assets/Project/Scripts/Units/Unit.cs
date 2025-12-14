@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-
+    [SerializeField] private ActionSO[] actionSOs;
     [SerializeField] protected bool isMoving;
     [SerializeField] protected bool isTargeted;
     protected Animator animator;
@@ -12,6 +12,7 @@ public abstract class Unit : MonoBehaviour
     protected SpriteRenderer _spriteRenderer;
     protected Material originalMaterial;
     protected Material highlightMaterial;
+    public ActionSO[] Action;
 
     protected void Awake()
     {
