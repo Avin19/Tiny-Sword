@@ -53,7 +53,7 @@ public class GameManager : SingletonManager<GameManager>
 
     private void DetectClick(Vector2 _inputPosition)
     {
-        if (IsPointerOverUIElement()) return;
+        if (Utilis.IsPointerOverUIElement()) return;
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(_inputPosition);
         RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
         if (HasClickedOnUnit(hit, out var unit))
@@ -148,16 +148,4 @@ public class GameManager : SingletonManager<GameManager>
         actionBar.Hide();
     }
 
-    bool IsPointerOverUIElement()
-    {
-        if (Input.touchCount > 0)
-        {
-            var touch = Input.GetTouch(0);
-            return EventSystem.current.IsPointerOverGameObject(touch.fingerId);
-        }
-        else
-        {
-            return EventSystem.current.IsPointerOverGameObject();
-        }
-    }
 }

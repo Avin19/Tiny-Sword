@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public static class Utilis
 {
@@ -9,7 +10,6 @@ public static class Utilis
 
     public static bool IsLeftClickOrTapUp => Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended);
 
-    public static Vector3 InputHoldWorldPosition => Input.touchCount > 0 ? Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) : Input.GetMouseButton(0) ? Camera.main.ScreenToWorldPoint(Input.mousePosition) : Vector2.zero;
 
     public static bool TryGetShortClickPosition(out Vector2 inputPosition, float maxDistance = 5f)
     {
@@ -30,5 +30,33 @@ public static class Utilis
         }
         return false;
 
+    }
+    public static bool TryGetHoldPosition(out Vector3 worldPosition)
+    {
+        if (Input.touchCount > 0)
+        {
+            worldPosition = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            return true;
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            return true;
+        }
+        worldPosition = Vector3.zero;
+        return false;
+    }
+
+    public static bool IsPointerOverUIElement()
+    {
+        if (Input.touchCount > 0)
+        {
+            var touch = Input.GetTouch(0);
+            return EventSystem.current.IsPointerOverGameObject(touch.fingerId);
+        }
+        else
+        {
+            return EventSystem.current.IsPointerOverGameObject();
+        }
     }
 }

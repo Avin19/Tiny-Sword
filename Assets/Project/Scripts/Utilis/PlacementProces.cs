@@ -13,8 +13,7 @@ public class PlacementProcess
 
     public void Update()
     {
-        Vector3 worldPosition = Utilis.InputHoldWorldPosition;
-        if (worldPosition != Vector3.zero)
+        if (Utilis.TryGetHoldPosition(out Vector3 worldPosition))
         {
             placementOutline.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0f);
 
