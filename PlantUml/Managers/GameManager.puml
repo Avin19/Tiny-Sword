@@ -1,0 +1,27 @@
+@startuml
+class GameManager {
+    + IsUnitSelected : bool <<get>>
+    - Start() : void
+    - Update() : void
+    + StartBuildProcess(buildActionSO:BuildActionSO) : void
+    - HasClickedOnUnit(hit:RaycastHit2D, _unit:Unit) : bool
+    - DetectClick(_inputPosition:Vector2) : void
+    - HandleClickOnGround(worldPosition:Vector2) : void
+    - HandleClickOnUnit(unit:Unit) : void
+    - SelectNewUnit(unit:Unit) : void
+    - HasClickedOnActiveUnit(clickedUnit:Unit) : bool
+    - IsHumanoid(unit:Unit) : bool
+    - Displayeffect(worldPoint:Vector2) : void
+    - CancelActiveUnit() : void
+    - ShowUnitAction(unit:Unit) : void
+    - ClearActionBarUI() : void
+}
+class "SingletonManager`1"<T> {
+}
+"SingletonManager`1" "<GameManager>" <|-- GameManager
+GameManager --> "pointToClickPrefab" PointToClick
+GameManager --> "actionBar" ActionBar
+GameManager --> "activeUnit" Unit
+GameManager --> "touchPosition" Vector2
+GameManager --> "placementProcess" PlacementProcess
+@enduml

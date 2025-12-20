@@ -1,0 +1,18 @@
+@startuml
+abstract class Unit {
+    # isMoving : bool
+    # isTargeted : bool
+    # Awake() : void
+    + MoveToPosition(position:Vector3) : void
+    + Select() : void
+    + Deselect() : void
+    - HighLight() : void
+    - UnHighLight() : void
+}
+MonoBehaviour <|-- Unit
+Unit --> "animator" Animator
+Unit --> "_aiPawn" AIPawn
+Unit --> "_spriteRenderer" SpriteRenderer
+Unit --> "originalMaterial" Material
+Unit --> "highlightMaterial" Material
+@enduml

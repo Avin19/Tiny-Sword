@@ -1,0 +1,9 @@
+@startuml
+class ActionButton {
+    - Oestroy() : void
+    + Init(icon:Sprite, action:UnityAction) : void
+}
+MonoBehaviour <|-- ActionButton
+ActionButton --> "_iconImage" Image
+ActionButton --> "_buttonImage" Button
+@enduml

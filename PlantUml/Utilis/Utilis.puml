@@ -1,0 +1,11 @@
+@startuml
+class Utilis <<static>> {
+    + {static} IsLeftClickOrTapDown : bool <<get>>
+    + {static} IsLeftClickOrTapUp : bool <<get>>
+    + {static} TryGetShortClickPosition(inputPosition:Vector2, maxDistance:float) : bool
+    + {static} TryGetHoldPosition(worldPosition:Vector3) : bool
+    + {static} IsPointerOverUIElement() : bool
+}
+Utilis --> "touchPosition" Vector2
+Utilis --> "InputPosition" Vector2
+@enduml

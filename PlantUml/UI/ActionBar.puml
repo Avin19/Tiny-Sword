@@ -1,0 +1,16 @@
+@startuml
+class ActionBar {
+    - Awake() : void
+    + RegisterAction(icon:Sprite, action:UnityAction) : void
+    + ClearActions() : void
+    + Show() : void
+    + Hide() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- ActionBar
+ActionBar --> "_image" Image
+ActionBar --> "_actionButtonPrefab" ActionButton
+ActionBar --> "_originalColor" Color
+ActionBar o-> "actionBtns<ActionButton>" "List`1"
+@enduml

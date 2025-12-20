@@ -1,0 +1,7 @@
+@startuml
+abstract class "SingletonManager`1"<T> {
+    - {static} instance : T
+    + {static} Instance : T <<get>>
+}
+MonoBehaviour <|-- "SingletonManager`1"
+@enduml

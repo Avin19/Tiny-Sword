@@ -1,0 +1,9 @@
+@startuml
+abstract class ActionSO {
+    + ActionName : string
+    + Guid : string
+    + {abstract} Execute(gameManager:GameManager) : void
+}
+ScriptableObject <|-- ActionSO
+ActionSO --> "Icon" Sprite
+@enduml

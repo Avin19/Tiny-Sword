@@ -1,0 +1,51 @@
+@startuml
+class AdManager {
+    - androidGameId : string = "YOUR_ANDROID_GAME_ID"
+    - iOSGameId : string = "YOUR_IOS_GAME_ID"
+    - testMode : bool = true
+    - gameId : string
+    - bannerAndroidAdUnitId : string = "Banner_Android"
+    - bannerIOSAdUnitId : string = "Banner_iOS"
+    - bannerAdUnitId : string
+    - bannerLoaded : bool = false
+    - interstitialAndroidAdUnitId : string = "Interstitial_Android"
+    - interstitialIOSAdUnitId : string = "Interstitial_iOS"
+    - interstitialAdUnitId : string
+    - interstitialLoaded : bool = false
+    - rewardedAndroidAdUnitId : string = "Rewarded_Android"
+    - rewardedIOSAdUnitId : string = "Rewarded_iOS"
+    - rewardedAdUnitId : string
+    - rewardedLoaded : bool = false
+    - lastShowingAdUnitId : string = null
+    - Awake() : void
+    + InitializeAds() : void
+    + OnInitializationComplete() : void
+    + OnInitializationFailed(error:UnityAdsInitializationError, message:string) : void
+    + LoadBanner() : void
+    + ShowBanner() : void
+    + HideBanner() : void
+    - OnBannerLoaded() : void
+    - OnBannerError(message:string) : void
+    - OnBannerClicked() : void
+    - OnBannerShown() : void
+    - OnBannerHidden() : void
+    + LoadInterstitial() : void
+    + ShowInterstitial() : void
+    + LoadRewarded() : void
+    + ShowRewarded() : void
+    + OnUnityAdsAdLoaded(adUnitId:string) : void
+    + OnUnityAdsFailedToLoad(adUnitId:string, error:UnityAdsLoadError, message:string) : void
+    + OnUnityAdsShowFailure(adUnitId:string, error:UnityAdsShowError, message:string) : void
+    + OnUnityAdsShowStart(adUnitId:string) : void
+    + OnUnityAdsShowClick(adUnitId:string) : void
+    + OnUnityAdsShowComplete(adUnitId:string, showCompletionState:UnityAdsShowCompletionState) : void
+    - GrantReward() : void
+}
+class "SingletonManager`1"<T> {
+}
+"SingletonManager`1" "<AdManager>" <|-- AdManager
+IUnityAdsInitializationListener <|-- AdManager
+IUnityAdsLoadListener <|-- AdManager
+IUnityAdsShowListener <|-- AdManager
+AdManager o-> "bannerPosition" BannerPosition
+@enduml
