@@ -1,0 +1,10 @@
+@startuml
+class HumanoidUnit {
+    + CurrentSpeed : float <<get>>
+    - Start() : void
+    # Update() : void
+}
+Unit <|-- HumanoidUnit
+HumanoidUnit --> "velocity" Vector2
+HumanoidUnit --> "lastPosition" Vector3
+@enduml

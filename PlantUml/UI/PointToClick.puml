@@ -1,0 +1,13 @@
+@startuml
+class PointToClick {
+    - duration : float = 1f
+    - timer : float
+    - freqTimer : float
+    - Start() : void
+    - Update() : void
+}
+MonoBehaviour <|-- PointToClick
+PointToClick --> "spriteRenderer" SpriteRenderer
+PointToClick --> "scaleCurve" AnimationCurve
+PointToClick --> "initialScale" Vector3
+@enduml

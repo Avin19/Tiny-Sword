@@ -1,0 +1,9 @@
+@startuml
+class PlacementProcess {
+    + PlacementProcess(buildActionSO:BuildActionSO)
+    + Update() : void
+    + ShowPlacementOutline() : void
+}
+PlacementProcess --> "placementOutline" GameObject
+PlacementProcess --> "_buildActionSO" BuildActionSO
+@enduml

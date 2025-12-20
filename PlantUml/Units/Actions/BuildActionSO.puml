@@ -1,0 +1,16 @@
+@startuml
+class BuildActionSO {
+    - goldCost : int
+    - woodCost : int
+    + GoldCost : int <<get>>
+    + WoodCost : int <<get>>
+    + <<override>> Execute(gameManager:GameManager) : void
+}
+ActionSO <|-- BuildActionSO
+BuildActionSO --> "placementSprite" Sprite
+BuildActionSO --> "foundationSprite" Sprite
+BuildActionSO --> "completionSprite" Sprite
+BuildActionSO --> "PlacementSprite" Sprite
+BuildActionSO --> "FoundationSprite" Sprite
+BuildActionSO --> "ComletionSprite" Sprite
+@enduml

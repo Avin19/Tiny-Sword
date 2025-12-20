@@ -1,0 +1,10 @@
+@startuml
+class AIPawn {
+    - m_Destination : Vector3?
+    + Destination : Vector3? <<get>>
+    - m_Speed : float = 5f
+    - Update() : void
+    + SetDestination(destination:Vector3) : void
+}
+MonoBehaviour <|-- AIPawn
+@enduml
